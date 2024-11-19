@@ -28,7 +28,7 @@ return [
     'retry_delay' => 5, // Delay between retries (in seconds)
 ];
 ```
-### Then run the bacjgroundjob using laravel tinker
+### Then run the backgroundjob using laravel tinker
 ```php
 php artisan tinker
 \App\Services\BackgroundJobRunner::run(\App\Jobs\TestJob::class, 'execute', ['Testing job']);
