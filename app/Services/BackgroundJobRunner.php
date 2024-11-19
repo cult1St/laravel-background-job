@@ -12,8 +12,8 @@ class BackgroundJobRunner
         $retryDelay = config('background_jobs.retry_delay', 5);
 
         // Sanitize and validate inputs
-        $className = filter_var($className, FILTER_SANITIZE_STRING);
-        $methodName = filter_var($methodName, FILTER_SANITIZE_STRING);
+        $className = filter_var($className, FILTER_SANITIZE_SPECIAL_CHARS);
+        $methodName = filter_var($methodName, FILTER_SANITIZE_SPECIAL_CHARS);
 
         $approvedClasses = config('background_jobs.approved_classes');
         $forbiddenMethods = ['__construct', '__destruct', '__call', '__invoke'];
