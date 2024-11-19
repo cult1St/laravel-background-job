@@ -29,8 +29,11 @@ return [
 ];
 ```
 ### Then run the backgroundjob using laravel tinker
-```php
+```bash
 php artisan tinker
+```
+```php
+
 \App\Services\BackgroundJobRunner::run(\App\Jobs\TestJob::class, 'execute', ['Testing job']);
 ```
 ### Or via a route
