@@ -27,13 +27,16 @@ return [
     'retries' => 3, // Number of retry attempts
     'retry_delay' => 5, // Delay between retries (in seconds)
 ];
-###Then run the bacjgroundjob using laravel tinker
+```
+### Then run the bacjgroundjob using laravel tinker
+```php
 php artisan tinker
 \App\Services\BackgroundJobRunner::run(\App\Jobs\TestJob::class, 'execute', ['Testing job']);
-
-###Or via a route
+```
+### Or via a route
+```php
 Route::get('/test-job', function () {
     \App\Services\BackgroundJobRunner::run(\App\Jobs\TestJob::class, 'execute', ['Hello from route!']);
     return 'Job executed! Check logs for details.';
 });
-
+```
